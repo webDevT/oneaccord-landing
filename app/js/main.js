@@ -26,7 +26,8 @@ $('.features__list').slick({
   });
 }
 
-$(".menu, .footer__menu, .features__item, .main-screen, .footer__menu").on("click","a", function (event) {
+
+$(".menu, .footer__menu, .features__item, .main-screen, .footer__menu").on("click","a:not('.privacy-link')", function (event) {
     event.preventDefault();
     var id  = $(this).attr('href'),
     top = $(id).offset().top;
@@ -45,3 +46,10 @@ $(window).scroll(function() {
     }
     }); 
 //-------start mobil menu----------
+
+//start cookies js
+$('.cookies__button').click(function(){
+    $('.cookies-banner').fadeOut();
+})
+
+//end cookies js

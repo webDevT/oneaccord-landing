@@ -52,6 +52,29 @@ body
     color: $black
     font-weight: 500
     text-decoration: none
+    cursor: pointer
+    white-space: nowrap
+    text-align: center
+    span 
+      width: 100%
+      height: 100%
+      display: flex 
+      justify-content: center 
+      align-items: center
+      white-space: nowrap
+      background: $black
+      border-radius: 10px
+      color: #e2e2ec
+      padding-left: 40px 
+      padding-right: 40px
+
+.button--transparent
+  padding: 1px
+  overflow: hidden
+  box-shadow: none
+.button--transparent:hover span
+  background: linear-gradient(93deg, #295A92 4.52%, #9D55C9 49.16%, #0F73B7 96.4%)
+  
 .button:hover
     color: #fff
     background: linear-gradient(93deg, #295A92 4.52%, #9D55C9 49.16%, #0F73B7 96.4%)
@@ -65,6 +88,7 @@ p
     background-clip: text
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent
+.button--transparent
 // end global style
 
 //start header style 
@@ -90,11 +114,10 @@ p
     background: rgba(15,15,55, .8)
     padding-top: 10px 
     padding-bottom: 10px
+    backdrop-filter: blur(4px)
     .logo 
         img 
-            width: 200px
-
-         
+            width: 200px        
 .menu 
     ul 
         padding: 0 
@@ -821,6 +844,45 @@ textarea:focus::placeholder
         transform: translateX(50%) translateY(50%) rotate(30deg)
     100%
         transform: translateX(50%) translateY(50%) rotate(0)
+
+//start cookies banner
+.cookies-banner
+  position: fixed
+  bottom: 0
+  left: 0 
+  width: 100% 
+  padding-top: 20px 
+  padding-bottom: 20px 
+  background: $black
+  .container-fluid 
+    display: flex 
+    justify-content: space-between 
+    align-items: center
+.cookies__text
+  font-size: 14px 
+.cookies__buttons
+  display: flex 
+  align-items: center
+.cookies__button
+  margin-left: 20px
+  font-size: 14px
+//end cookies banner 
+
+//start privacy style 
+.privacy-page
+  padding-top: 200px
+  padding-bottom: 150px
+  a 
+    color: #e2e2ec
+  .h2
+    margin-bottom: 10px
+.section-header
+  padding-bottom: 40px
+  .sub-title
+    text-align: center
+//end privacy style
+
+
 @import "media"
 
 
