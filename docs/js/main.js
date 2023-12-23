@@ -26,10 +26,22 @@ $('.features__list').slick({
   });
 }
 
-$(".menu, .footer__menu").on("click","a", function (event) {
+$(".menu, .footer__menu, .features__item, .main-screen, .footer__menu").on("click","a", function (event) {
     event.preventDefault();
     var id  = $(this).attr('href'),
     top = $(id).offset().top;
     $('body,html').animate({scrollTop: top}, 1000);
 
 });
+
+// ------start sticky header------
+
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 1){
+    $('.header').addClass("sticky");
+    }
+    else{
+    $('.header').removeClass("sticky");
+    }
+    }); 
+//-------start mobil menu----------

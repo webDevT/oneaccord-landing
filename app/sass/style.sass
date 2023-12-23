@@ -8,7 +8,6 @@ body
     font-size: $font-size
     font-family: $main-font
     margin: 0
-
 .container-fluid 
     width: $container-width 
     padding-left: 0 
@@ -73,10 +72,29 @@ p
     padding-top: 28px 
     padding-bottom: 28px
     width: 100%
+    position: fixed
+    top: 0 
+    left: 0
+    z-index: 999
+    transition: all .5s
     .container-fluid 
         display: flex 
         justify-content: space-between 
         align-items: center
+.logo 
+    width: 300px
+    img 
+        transition: all .5s
+        width: 100%
+.header.sticky 
+    background: rgba(15,15,55, .8)
+    padding-top: 10px 
+    padding-bottom: 10px
+    .logo 
+        img 
+            width: 200px
+
+         
 .menu 
     ul 
         padding: 0 
@@ -117,8 +135,12 @@ p
     max-width: 100%
     font-size: 20px
 .main-screen
-    padding-top: 47px
-    overflow: hidden
+    padding-top: 247px
+    // overflow-x: hidden
+    // overflow-y: visible
+    position: relative
+    padding-bottom: 100px
+    perspective: 400vmin
     .container-fluid 
         display: flex 
         justify-content: space-between
@@ -141,6 +163,10 @@ p
     position: absolute 
     top: 140px
     left: 70px
+.main-screen__bables2
+    position: absolute 
+    top: 245px
+    left: 100px
 .main-screen__image-wrapper:before 
     content: ''
     display: block 
@@ -151,7 +177,7 @@ p
     height: 400px 
     border-radius: 50%
     background: linear-gradient(100deg, #669DD0 8.23%, #B26FDF 48.78%, #5C6E9F 91.69%)
-    box-shadow: 5px 4px 15px 0px rgba(157, 85, 201, 0.20)
+    box-shadow: 5px 4px 15px 0px rgba(157, 85, 201, 0.5)
 .main-screen__content
     display: flex 
     flex-direction: column 
@@ -162,7 +188,8 @@ p
 
 //start features style 
 .features 
-    padding-top: 100px
+    padding-top: 0px
+    position: relative
     .h2 
         margin-bottom: 47px
 .features__list
@@ -381,9 +408,419 @@ textarea:focus::placeholder
         img 
             opacity: 0.8
 //end footer
+.main-screen
+    .container-fluid 
+        position: relative
+//start animation
+.scene, .circles
+  display: grid
+  place-self: center
+  transform-style: preserve-3d
 
+.scene
+  transform: rotatey(45deg) rotatez(45deg)
+  position: absolute
+  top: 150px
+  right: 10vw
+  z-index: -1
 
+.circles
+  -webkit-animation: circles 20s linear infinite
+  animation: circles 20s linear infinite
 
+  > *
+    &:nth-child(1)
+      --size:5vmin
+      --color:#440a67
+      --theta:0deg
+      --delay:0s
+
+    &:nth-child(2)
+      --size:6.8367346939vmin
+      --color:#440a67
+      --theta:7.3469387755deg
+      --delay:0.1020408163s
+
+    &:nth-child(3)
+      --size:8.6734693878vmin
+      --color:#440a67
+      --theta:14.693877551deg
+      --delay:0.2040816327s
+
+    &:nth-child(4)
+      --size:10.5102040816vmin
+      --color:#440a67
+      --theta:22.0408163265deg
+      --delay:0.306122449s
+
+    &:nth-child(5)
+      --size:12.3469387755vmin
+      --color:#440a67
+      --theta:29.387755102deg
+      --delay:0.4081632653s
+
+    &:nth-child(6)
+      --size:14.1836734694vmin
+      --color:#440a67
+      --theta:36.7346938776deg
+      --delay:0.5102040816s
+
+    &:nth-child(7)
+      --size:16.0204081633vmin
+      --color:#440a67
+      --theta:44.0816326531deg
+      --delay:0.612244898s
+
+    &:nth-child(8)
+      --size:17.8571428571vmin
+      --color:#440a67
+      --theta:51.4285714286deg
+      --delay:0.7142857143s
+
+    &:nth-child(9)
+      --size:19.693877551vmin
+      --color:#440a67
+      --theta:58.7755102041deg
+      --delay:0.8163265306s
+
+    &:nth-child(10)
+      --size:21.5306122449vmin
+      --color:#440a67
+      --theta:66.1224489796deg
+      --delay:0.9183673469s
+
+    &:nth-child(11)
+      --size:23.3673469388vmin
+      --color:#440a67
+      --theta:73.4693877551deg
+      --delay:1.0204081633s
+
+    &:nth-child(12)
+      --size:25.2040816327vmin
+      --color:#440a67
+      --theta:80.8163265306deg
+      --delay:1.1224489796s
+
+    &:nth-child(13)
+      --size:27.0408163265vmin
+      --color:#440a67
+      --theta:88.1632653061deg
+      --delay:1.2244897959s
+
+    &:nth-child(14)
+      --size:28.8775510204vmin
+      --color:#440a67
+      --theta:95.5102040816deg
+      --delay:1.3265306122s
+
+    &:nth-child(15)
+      --size:30.7142857143vmin
+      --color:#440a67
+      --theta:102.8571428571deg
+      --delay:1.4285714286s
+
+    &:nth-child(16)
+      --size:32.5510204082vmin
+      --color:#440a67
+      --theta:110.2040816327deg
+      --delay:1.5306122449s
+
+    &:nth-child(17)
+      --size:34.387755102vmin
+      --color:#440a67
+      --theta:117.5510204082deg
+      --delay:1.6326530612s
+
+    &:nth-child(18)
+      --size:36.2244897959vmin
+      --color:#440a67
+      --theta:124.8979591837deg
+      --delay:1.7346938776s
+
+    &:nth-child(19)
+      --size:38.0612244898vmin
+      --color:#440a67
+      --theta:132.2448979592deg
+      --delay:1.8367346939s
+
+    &:nth-child(20)
+      --size:39.8979591837vmin
+      --color:#440a67
+      --theta:139.5918367347deg
+      --delay:1.9387755102s
+
+    &:nth-child(21)
+      --size:41.7346938776vmin
+      --color:#440a67
+      --theta:146.9387755102deg
+      --delay:2.0408163265s
+
+    &:nth-child(22)
+      --size:43.5714285714vmin
+      --color:#440a67
+      --theta:154.2857142857deg
+      --delay:2.1428571429s
+
+    &:nth-child(23)
+      --size:45.4081632653vmin
+      --color:#440a67
+      --theta:161.6326530612deg
+      --delay:2.2448979592s
+
+    &:nth-child(24)
+      --size:47.2448979592vmin
+      --color:#440a67
+      --theta:168.9795918367deg
+      --delay:2.3469387755s
+
+    &:nth-child(25)
+      --size:49.0816326531vmin
+      --color:#440a67
+      --theta:176.3265306122deg
+      --delay:2.4489795918s
+
+    &:nth-child(26)
+      --size:50.9183673469vmin
+      --color:#440a67
+      --theta:183.6734693878deg
+      --delay:2.5510204082s
+
+    &:nth-child(27)
+      --size:52.7551020408vmin
+      --color:#440a67
+      --theta:191.0204081633deg
+      --delay:2.6530612245s
+
+    &:nth-child(28)
+      --size:54.5918367347vmin
+      --color:#440a67
+      --theta:198.3673469388deg
+      --delay:2.7551020408s
+
+    &:nth-child(29)
+      --size:56.4285714286vmin
+      --color:#440a67
+      --theta:205.7142857143deg
+      --delay:2.8571428571s
+
+    &:nth-child(30)
+      --size:58.2653061224vmin
+      --color:#440a67
+      --theta:213.0612244898deg
+      --delay:2.9591836735s
+
+    &:nth-child(31)
+      --size:60.1020408163vmin
+      --color:#440a67
+      --theta:220.4081632653deg
+      --delay:3.0612244898s
+
+    &:nth-child(32)
+      --size:61.9387755102vmin
+      --color:#440a67
+      --theta:227.7551020408deg
+      --delay:3.1632653061s
+
+    &:nth-child(33)
+      --size:63.7755102041vmin
+      --color:#440a67
+      --theta:235.1020408163deg
+      --delay:3.2653061224s
+
+    &:nth-child(34)
+      --size:65.612244898vmin
+      --color:#440a67
+      --theta:242.4489795918deg
+      --delay:3.3673469388s
+
+    &:nth-child(35)
+      --size:67.4489795918vmin
+      --color:#440a67
+      --theta:249.7959183673deg
+      --delay:3.4693877551s
+
+    &:nth-child(36)
+      --size:69.2857142857vmin
+      --color:#440a67
+      --theta:257.1428571429deg
+      --delay:3.5714285714s
+
+    &:nth-child(37)
+      --size:71.1224489796vmin
+      --color:#440a67
+      --theta:264.4897959184deg
+      --delay:3.6734693878s
+
+    &:nth-child(38)
+      --size:72.9591836735vmin
+      --color:#440a67
+      --theta:271.8367346939deg
+      --delay:3.7755102041s
+
+    &:nth-child(39)
+      --size:74.7959183673vmin
+      --color:#440a67
+      --theta:279.1836734694deg
+      --delay:3.8775510204s
+
+    &:nth-child(40)
+      --size:76.6326530612vmin
+      --color:#440a67
+      --theta:286.5306122449deg
+      --delay:3.9795918367s
+
+    &:nth-child(41)
+      --size:78.4693877551vmin
+      --color:#440a67
+      --theta:293.8775510204deg
+      --delay:4.0816326531s
+
+    &:nth-child(42)
+      --size:80.306122449vmin
+      --color:#440a67
+      --theta:301.2244897959deg
+      --delay:4.1836734694s
+
+    &:nth-child(43)
+      --size:82.1428571429vmin
+      --color:#440a67
+      --theta:308.5714285714deg
+      --delay:4.2857142857s
+
+    &:nth-child(44)
+      --size:83.9795918367vmin
+      --color:#440a67
+      --theta:315.9183673469deg
+      --delay:4.387755102s
+
+    &:nth-child(45)
+      --size:85.8163265306vmin
+      --color:#440a67
+      --theta:323.2653061224deg
+      --delay:4.4897959184s
+
+    &:nth-child(46)
+      --size:87.6530612245vmin
+      --color:#440a67
+      --theta:330.612244898deg
+      --delay:4.5918367347s
+
+    &:nth-child(47)
+      --size:89.4897959184vmin
+      --color:#440a67
+      --theta:337.9591836735deg
+      --delay:4.693877551s
+
+    &:nth-child(48)
+      --size:91.3265306122vmin
+      --color:#440a67
+      --theta:345.306122449deg
+      --delay:4.7959183673s
+
+    &:nth-child(49)
+      --size:93.1632653061vmin
+      --color:#440a67
+      --theta:352.6530612245deg
+      --delay:4.8979591837s
+
+    &:nth-child(50)
+      --size:95vmin
+      --color:#440a67
+      --theta:360deg
+      --delay:5s
+
+.circle
+  display: grid
+  height: var(--size)
+  width: var(--size)
+  border: 0.4591836735vmin solid var(--color)
+  border-radius: 50%
+  place-self: center
+  position: absolute
+  transform: rotatex(var(--theta))
+  -webkit-animation: circle 10s var(--delay, 0s) ease-in-out infinite
+  animation: circle 10s var(--delay, 0s) ease-in-out infinite
+
+@-webkit-keyframes circles
+  to
+    transform: rotate3d(1, 1, 1, 1turn)
+
+@keyframes circles
+  to
+    transform: rotate3d(1, 1, 1, 1turn)
+
+@-webkit-keyframes circle
+  50%
+    transform: rotatex(calc(var(--theta) * 0)) scale(0.5)
+
+@keyframes circle
+  50%
+    transform: rotatex(calc(var(--theta) * 0)) scale(0.5)
+.main-screen__bables2
+    animation: bable 20s var(--delay, 0s) ease-in-out infinite
+@-webkit-keyframes bable
+    0%
+        transform: translateY(0px) translateX(0px) scale(1) rotate(0)
+    20%
+        transform: translateY(10px) translateX(5px) scale(1.2) rotate(20deg)
+    40%
+        transform: translateY(0px) translateX(0px) scale(1) rotate(30deg)
+    60%
+        transform: translateY(-10px) translateX(15px) scale(1) rotate(40deg)
+    100%
+        transform: translateY(0px) translateX(0px) scale(1) rotate(0deg)
+.bable1   
+    animation: bable2 20s var(--delay, 0s) ease-in-out infinite
+@-webkit-keyframes bable2
+    0%
+        transform: translateX(-25%) translateY(-30%) scale(1) rotate(0)
+    20%
+        transform: translateY(-45%) translateX(-15%) scale(1.1) rotate(90deg)
+    40%
+        transform: translateY(-60%) translateX(-25%) scale(1) rotate(30deg)
+    60%
+        transform: translateY(-40%) translateX(-15%) scale(1) rotate(90deg)
+    100%
+        transform: translateX(-25%) translateY(-30%) scale(1) rotate(0)
+.bable2   
+    animation: bable3 30s var(--delay, 0s) ease-in-out infinite
+@-webkit-keyframes bable3
+    0%
+        transform: translateX(-50%) translateY(-50%) rotate(0)
+    20%
+        transform: translateX(-50%) translateY(-50%) rotate(90deg)
+    40%
+        transform: translateX(-50%) translateY(-50%) rotate(30deg)
+    60%
+        transform: translateX(-50%) translateY(-50%) rotate(90deg)
+    100%
+        transform: translateX(-50%) translateY(-50%) rotate(0)
+.bable4   
+    animation: bable4 20s var(--delay, 0s) ease-in-out infinite
+@-webkit-keyframes bable4
+    0%
+        transform: translateX(-20%) translateY(63%) scale(1) rotate(0)
+    20%
+        transform: translateX(-30%) translateY(43%) scale(1.1) rotate(90deg)
+    40%
+        transform: translateX(-20%) translateY(23%) scale(1) rotate(30deg)
+    60%
+        transform: translateX(-30%) translateY(43%) scale(1) rotate(90deg)
+    100%
+        transform: translateX(-20%) translateY(63%) scale(1) rotate(0)
+.bable3   
+    animation: bable5 30s var(--delay, 0s) ease-in-out infinite
+@-webkit-keyframes bable5
+    0%
+        transform: translateX(50%) translateY(50%) rotate(0)
+    20%
+        transform: translateX(50%) translateY(50%) rotate(30deg)
+    40%
+        transform: translateX(50%) translateY(50%) rotate(0deg)
+    60%
+        transform: translateX(50%) translateY(50%) rotate(30deg)
+    100%
+        transform: translateX(50%) translateY(50%) rotate(0)
 @import "media"
 
 
