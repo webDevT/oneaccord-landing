@@ -228,7 +228,7 @@ p
     margin-bottom: 25px
     overflow: hidden
     .h3 
-        margin-bottom: 5px
+        margin-bottom: 10px
     p 
         font-size: 14px
         margin-bottom: 16px
@@ -240,6 +240,7 @@ p
     object-position: center
 .features__item-content
     padding: 24px 15px
+    height: calc( 100% - 220px )
 .features__item-link
     background: linear-gradient(98deg, #F5F5F5 15.26%, #DEBAF4 45.17%, #B0CAFC 77.86%)
     background-clip: text
@@ -881,7 +882,11 @@ textarea:focus::placeholder
   .sub-title
     text-align: center
 //end privacy style
-
+.features__item-content
+  display: flex 
+  flex-direction: column 
+  justify-content: space-between
+  align-items: flex-start
 
 @import "media"
 
